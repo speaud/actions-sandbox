@@ -1,0 +1,16 @@
+on: 
+  workflow_dispatch:
+    inputs:
+      revision_new:
+        description: 'Revision New'     
+        required: true
+      tags:
+        description: 'Test scenario tags'
+
+jobs:
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Log level: ${{ github.event.inputs.revision_new }}"
+        echo "Tags: ${{ github.event.inputs.tags }}" 
