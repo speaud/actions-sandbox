@@ -1,10 +1,11 @@
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   mockJob:
+    name: Run terraform with 0 traffic
     runs-on: ubuntu-latest
     steps:
     - run: |
