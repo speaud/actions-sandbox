@@ -4,9 +4,14 @@ on:
       revision_new:
         description: 'Revision New'     
         required: true
+      revision_new_traffic:
+        description: 'Revision New Traffic'     
+        required: true
       revision_current:
         description: 'Revision Current'     
-        # required: true
+        required: true
+      revision_current_traffic:
+        description: 'Revision Current Traffic'
       # tags:
         # description: 'Test scenario tags'
 
@@ -15,4 +20,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Log level: ${{ github.event.inputs.revision_new }}"
+        echo "New revision: ${{ github.event.inputs.revision_new }} at ${{ github.event.inputs.revision_new_traffic }}%"
+        echo "New revision: ${{ github.event.inputs.revision_current }} at ${{ github.event.inputs.revision_current_traffic }}%"
+  # terraform:
+  #   name: 'Terraform'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: 'Checkout'
+  #       uses: actions/checkout@master
+  #     - name: 'Terraform Init'
+  #       uses: hashicorp/terraform-github-actions@master
+  #       with:
+  #         tf_actions_version: 0.12.13
+  #         tf_actions_subcommand: 'init'
+  #         tf_actions_working_dir: '.'
+  #         tf_actions_comment: true
+  #         args: '-var="env=dev"'
+  #       env:
+            # APP_NAME: "appname"
+            # LIKES_LOG_LEVEL: "INFO"
+            # GUNICORN_LOG_LEVEL: "INFO"
+            # JWT_SECRET: ${{ secrets.JWT_SECRET }}
+            # JWT_PAYLOAD_KEY: ${{ secrets.JWT_PAYLOAD_KEY }}
+            # JWT_PAYLOAD_HMAC_KEY: ${{ secrets.JWT_PAYLOAD_HMAC_KEY }}
+            # GOOGLE_CLOUD_PROJECT_ID: "ecomm-dev-poc"
+            # FIRESTORE_USE_DEFAULT_CREDS: "True"
+            # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            # AWS_PRIMARY_REGION: "us-east-1"
+            # SNS_LIKE_EVENT_TOPIC: "A15_DEV_LIKE_EVENT"
+            # LIKE_FUNCTION_BASE_URL: "https://us-east1-ecomm-dev-poc.cloudfunctions.net/LikesService-edw-function"    
