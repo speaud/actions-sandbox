@@ -4,8 +4,11 @@ on:
       revision_new:
         description: 'Revision New'     
         required: true
-      tags:
-        description: 'Test scenario tags'
+      revision_current:
+        description: 'Revision Current'     
+        # required: true
+      # tags:
+        # description: 'Test scenario tags'
 
 jobs:
   printInputs:
@@ -13,4 +16,3 @@ jobs:
     steps:
     - run: |
         echo "Log level: ${{ github.event.inputs.revision_new }}"
-        echo "Tags: ${{ github.event.inputs.tags }}" 
