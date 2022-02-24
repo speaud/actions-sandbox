@@ -46,15 +46,4 @@ jobs:
   #         args: '-var="env=dev"'
   #       env:
             # APP_NAME: "appname"
-            # LIKES_LOG_LEVEL: "INFO"
-            # GUNICORN_LOG_LEVEL: "INFO"
-            # JWT_SECRET: ${{ secrets.JWT_SECRET }}
-            # JWT_PAYLOAD_KEY: ${{ secrets.JWT_PAYLOAD_KEY }}
-            # JWT_PAYLOAD_HMAC_KEY: ${{ secrets.JWT_PAYLOAD_HMAC_KEY }}
-            # GOOGLE_CLOUD_PROJECT_ID: "ecomm-dev-poc"
-            # FIRESTORE_USE_DEFAULT_CREDS: "True"
-            # AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            # AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            # AWS_PRIMARY_REGION: "us-east-1"
-            # SNS_LIKE_EVENT_TOPIC: "A15_DEV_LIKE_EVENT"
-            # LIKE_FUNCTION_BASE_URL: "https://us-east1-ecomm-dev-poc.cloudfunctions.net/LikesService-edw-function"    
+            # .... and so on
