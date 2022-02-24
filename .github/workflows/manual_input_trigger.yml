@@ -16,12 +16,20 @@ on:
         # description: 'Test scenario tags'
 
 jobs:
-  printInputs:
+  logInputs:
+    name: Validate User Input
     runs-on: ubuntu-latest
     steps:
     - run: |
         echo "New revision: ${{ github.event.inputs.revision_new }} at ${{ github.event.inputs.revision_new_traffic }}%"
         echo "New revision: ${{ github.event.inputs.revision_current }} at ${{ github.event.inputs.revision_current_traffic }}%"
+  terraform:
+    name: Run terraform
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Publish New Revision"
+  # https://github.com/hashicorp/terraform-github-actions
   # terraform:
   #   name: 'Terraform'
   #   runs-on: ubuntu-latest
