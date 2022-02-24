@@ -12,6 +12,7 @@ on:
         required: true
       revision_current_traffic:
         description: 'Revision Current Traffic'
+        required: true
       # tags:
         # description: 'Test scenario tags'
 
